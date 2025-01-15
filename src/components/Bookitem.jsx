@@ -2,7 +2,7 @@ import { ReadingContext } from "@/contexts/GetReadingBook";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-export default function Bookitem({ book }) {
+export default function BookItem({ book }) {
     const { setReadingBook } = useContext(ReadingContext);
 
     function openBook(e) {
@@ -12,6 +12,7 @@ export default function Bookitem({ book }) {
         // @ts-ignore
         setReadingBook(JSON.parse(localStorage.getItem("bookTitle")));
     }
+
     return (
         <>
             <div>

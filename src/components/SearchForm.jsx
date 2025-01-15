@@ -4,12 +4,6 @@ import { useForm } from "react-hook-form";
 export default function SearchForm({ setSearch }) {
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => {
-        if (setSearch) {
-            setSearch(data.bookName);
-        }
-    };
-
     return (
         <>
             <input
@@ -18,7 +12,7 @@ export default function SearchForm({ setSearch }) {
                 onKeyDown={(e) => {
                     if (e.key === "Enter") {
                         e.preventDefault();
-                        handleSubmit(onSubmit)();
+                        handleSubmit((data) => setSearch(data.bookName))();
                     }
                 }}
             />
